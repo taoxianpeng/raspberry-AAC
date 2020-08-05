@@ -70,7 +70,7 @@ def get_wearther_data():
     GPIO.cleanup()  
     if check == tmp:                               #数据校验，相等则输出  
         print("temperature : ", temperature, ", humidity : " , humidity)  
-        return {"time":,"temperature : ": temperature, "humidity": humidity}
+        return {"temperature : ": temperature, "humidity": humidity}
     else:                                       #错误输出错误信息，和校验数据  
         time.sleep(1)
         get_wearther_data()
