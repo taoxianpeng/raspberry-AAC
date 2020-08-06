@@ -2,6 +2,7 @@
 #-*-coding:utf-8 -*-
 import sqlite3
 import time
+import datetime
 # import random
 # import logging
 import GetData
@@ -13,15 +14,8 @@ class Run():
         self.db = sqlite3.connect('./data.db')
         self.cursor = self.db.cursor()
     def run(self,):
-        time_set = time.localtime(time.time()) 
-        cur_time = '{}-{}-{} {}:{}:{}'.format(
-            time_set[0],
-            time_set[1],
-            time_set[2],
-            time_set[3],
-            time_set[4],
-            time_set[5]
-            )
+        dtime = datetime.datetime.now()
+        cur_time = dtime.strftime(r'%Y-&m-%d %H:%M:%S')
         while True:
 
             try:
