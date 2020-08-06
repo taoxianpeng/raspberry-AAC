@@ -5,7 +5,8 @@ import time
 
 class AccData():
     def __init__(self,):
-        self.sign = 5 #最多重试5次
+        # self.sign = 5 #最多重试5次
+        pass
     def get_wearther_data(self,):
         
         channel = 24            #引脚号16  
@@ -76,11 +77,7 @@ class AccData():
             print("temperature : ", temperature, ", humidity : " , humidity)  
             return humidity,temperature
         else:                                       #错误输出错误信息，和校验数据  
-            time.sleep(2)
-            if self.sign>0:
-                self.get_wearther_data()
-            else:
-                raise TimeoutError('time over')
+            return -1,-1
             # print("wrong")  
             # print("temperature : ", temperature, ", humidity : " , humidity, " check : ", check, " tmp : ", tmp)  
         

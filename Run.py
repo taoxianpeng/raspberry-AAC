@@ -20,7 +20,9 @@ class Run():
 
             try:
                 getdata = GetData.AccData()
-                humidity, temperature = getdata.get_wearther_data()
+                humidity, temperature = -1,-1
+                while humidity==-1 and temperature==-1:
+                    humidity, temperature = getdata.get_wearther_data()
                 # humidity, temperature = self.test()
                 self.write_data(cur_time,humidity,temperature)
 
