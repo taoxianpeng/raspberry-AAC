@@ -23,7 +23,7 @@ class Run():
             time_set[5]
             )
         while True:
-            time.sleep(60)
+
             try:
                 getdata = GetData.AccData()
                 humidity, temperature = getdata.get_wearther_data()
@@ -32,6 +32,8 @@ class Run():
 
             except Exception as f:
                 print(f)
+
+            time.sleep(5)
         self.close()
 
     def write_data(self, time, humidity, temperature):

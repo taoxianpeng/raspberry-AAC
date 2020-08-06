@@ -47,8 +47,8 @@ class AccData():
         
             j += 1  
         
-        print("sensor is working.")  
-        print(data)              #输出初始数据高低电平  
+        # print("sensor is working.")  
+        # print(data)              #输出初始数据高低电平  
         
         humidity_bit = data[0:8]        #分组  
         humidity_point_bit = data[8:16]  
@@ -79,6 +79,8 @@ class AccData():
             time.sleep(2)
             if self.sign>0:
                 self.get_wearther_data()
+            else:
+                raise TimeoutError('time over')
             # print("wrong")  
             # print("temperature : ", temperature, ", humidity : " , humidity, " check : ", check, " tmp : ", tmp)  
         
