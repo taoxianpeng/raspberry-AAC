@@ -15,7 +15,7 @@ class Run():
         self.cursor = self.db.cursor()
     def run(self,):
         dtime = datetime.datetime.now()
-        cur_time = dtime.strftime(r'%Y-&m-%d %H:%M:%S')
+        cur_time = dtime.strftime(r'%Y-%m-%d %H:%M:%S')
         while True:
 
             try:
